@@ -120,8 +120,8 @@ async def webtoken_from_proxy(request):
         return 403, {}, "forbidden: must be on localhost"
     """
 
-    # Check if the Remote-User header exists
-    user = request.headers.get("Remote-User", "")
+    # Check if the x-remote-user header exists
+    user = request.headers.get("x-remote-user", "")
     if not user:
         return 403, {}, "forbidden: no proxy user provided"
 
