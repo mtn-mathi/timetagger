@@ -22,7 +22,7 @@ or to automate the tracking of certain processes by writing a script.
 ## Run your own server
 
 TimeTagger provides an example/default script to run the TimeTagger app locally
-in [__main__.py](https://github.com/almarklein/timetagger/blob/main/timetagger/__main__.py).
+in [`__main__.py`](https://github.com/almarklein/timetagger/blob/main/timetagger/__main__.py).
 You can also integrate TimeTagger into a larger web application, or extend
 it in your own ways using the [library](libapi.md).
 One prerequisite is that the web-server framework is
@@ -31,9 +31,16 @@ async. Examples can be [Asgineer](https://github.com/almarklein/asgineer),
 [Starlette](https://github.com/encode/starlette), and
 [Quart](https://pgjones.gitlab.io/quart/).
 
+
 You can do whatever you want when you run things locally. When you host it
 on the web, you should take care of authentication, and make sure that you
 comply to the TimeTagger license (GPLv3).
+
+Note that when you run your own server, you probably want to make sure that it's
+always on. See [this article](https://tderflinger.com/en/using-systemd-to-start-a-python-application-with-virtualenv)
+for autostarting TimeTagger on Linux systems. The TimeTagger client has a local
+cache and stays working even when the server is off. In this case the
+sync indicator icon in the top left will show an exclamation mark.
 
 Also check [this article](https://timetagger.app/articles/selfhost/) about self-hosting TimeTagger.
 
